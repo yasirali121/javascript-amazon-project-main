@@ -64,6 +64,30 @@ console.log(date.toLocaleTimeString());*/
 
 export let products = [];
 
+ export function loadProductsFetch(){
+  const promise = fetch(
+    'https://supersimplebackend.dev/products'
+  ).then((response) =>{
+   return response.json()
+  }).then((productsData) =>{
+    products =productsData.map((productDetails) =>{
+      if (productDetails.type == 'clothing') {
+        return new clothing(productDetails);
+      }
+     return new product(productDetails);
+    });
+  
+    console.log('load products');
+  });
+
+  return promise;
+}
+
+/*
+loadProductsFetch().then(() =>{
+  console.log('next step');
+});*/
+
 export function loadProducts(fun){
   const xhr = new XMLHttpRequest();
 
