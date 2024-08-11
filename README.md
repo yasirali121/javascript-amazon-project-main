@@ -6,3 +6,8 @@ FEATURES :
 3:  Cart
 4: delivery page 
 5 : Order Tracking page
+
+Technologies used ;
+1 HTML
+2 CSS
+3 JAVASCRIPT
